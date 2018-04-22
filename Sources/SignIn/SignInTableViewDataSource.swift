@@ -11,17 +11,12 @@ import UIKit
 final class SignInTableViewDataSource: NSObject {
     var viewModel: [FormTableViewModel]?
 
-    private enum ReuseIdentifier: String {
-        case button = "ButtonTableViewCell"
-        case textField = "TextFieldTableViewCell"
-    }
-
     init(tableView: UITableView) {
         super.init()
 
         let reuseIdentifierMap = [
-            ReuseIdentifier.button.rawValue: ButtonTableViewCell.self,
-            ReuseIdentifier.textField.rawValue: TextFieldTableViewCell.self
+            FormTableViewCellReuseIdentifier.button.rawValue: ButtonTableViewCell.self,
+            FormTableViewCellReuseIdentifier.textField.rawValue: TextFieldTableViewCell.self
         ]
 
         tableView.registerNibsWithReuseIdentifierMap(reuseIdentifierMap)
@@ -44,9 +39,9 @@ extension SignInTableViewDataSource: UITableViewDataSource {
 
         switch model.type {
         case .button:
-            reuseIdentifier = ReuseIdentifier.button.rawValue
+            reuseIdentifier = FormTableViewCellReuseIdentifier.button.rawValue
         case .textField:
-            reuseIdentifier = ReuseIdentifier.textField.rawValue
+            reuseIdentifier = FormTableViewCellReuseIdentifier.textField.rawValue
         }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)

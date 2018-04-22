@@ -23,6 +23,7 @@
 		62F29753208D315000990B94 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F29751208D315000990B94 /* SignInViewController.swift */; };
 		62F29754208D315000990B94 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62F29752208D315000990B94 /* SignInView.xib */; };
 		62F29756208D327500990B94 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F29755208D327500990B94 /* UIViewController.swift */; };
+		62F29758208D34D600990B94 /* FormTableViewCellReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F29757208D34D600990B94 /* FormTableViewCellReuseIdentifier.swift */; };
 		831934E77ABD7D39A1E2389C /* Pods_App_FireBoss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C76601FBF296AEDBF7A05D /* Pods_App_FireBoss.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		62F29751208D315000990B94 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		62F29752208D315000990B94 /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
 		62F29755208D327500990B94 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		62F29757208D34D600990B94 /* FormTableViewCellReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCellReuseIdentifier.swift; sourceTree = "<group>"; };
 		6ACD14F58958485B0A06A223 /* Pods-App-FireBoss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-FireBoss.release.xcconfig"; path = "Pods/Target Support Files/Pods-App-FireBoss/Pods-App-FireBoss.release.xcconfig"; sourceTree = "<group>"; };
 		72C76601FBF296AEDBF7A05D /* Pods_App_FireBoss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_FireBoss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -140,6 +142,7 @@
 				62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */,
 				62449091208C99F700CA0BBB /* TableViewCellType.swift */,
 				62449093208C9AD300CA0BBB /* FormTableViewCell.swift */,
+				62F29757208D34D600990B94 /* FormTableViewCellReuseIdentifier.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				62449094208C9AD300CA0BBB /* FormTableViewCell.swift in Sources */,
 				62449089208C97B800CA0BBB /* SignInTableViewDataSource.swift in Sources */,
 				6244908B208C98E700CA0BBB /* UITableView.swift in Sources */,
+				62F29758208D34D600990B94 /* FormTableViewCellReuseIdentifier.swift in Sources */,
 				363B2577208A7C9100049A01 /* TextFieldTableViewCell.swift in Sources */,
 				62449087208C975300CA0BBB /* SignInTableViewController.swift in Sources */,
 				62F29753208D315000990B94 /* SignInViewController.swift in Sources */,
