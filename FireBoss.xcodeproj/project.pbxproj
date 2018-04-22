@@ -7,31 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		363B2573208A773400049A01 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363B2571208A773400049A01 /* SignInViewController.swift */; };
-		363B2574208A773400049A01 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363B2572208A773400049A01 /* SignInView.xib */; };
 		363B2577208A7C9100049A01 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363B2575208A7C9100049A01 /* TextFieldTableViewCell.swift */; };
 		363B2578208A7C9100049A01 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363B2576208A7C9100049A01 /* TextFieldTableViewCell.xib */; };
 		36BD6A9C208A6F4800D6C351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6A9B208A6F4800D6C351 /* AppDelegate.swift */; };
-		36BD6A9E208A6F4800D6C351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6A9D208A6F4800D6C351 /* ViewController.swift */; };
-		36BD6AA1208A6F4800D6C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BD6A9F208A6F4800D6C351 /* Main.storyboard */; };
 		36BD6AA3208A6F4900D6C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36BD6AA2208A6F4900D6C351 /* Assets.xcassets */; };
-		36BD6AA6208A6F4900D6C351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BD6AA4208A6F4900D6C351 /* LaunchScreen.storyboard */; };
+		62449081208C95A100CA0BBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62449080208C95A100CA0BBB /* LaunchScreen.xib */; };
+		62449084208C96AE00CA0BBB /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449082208C96AE00CA0BBB /* ButtonTableViewCell.swift */; };
+		62449085208C96AE00CA0BBB /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */; };
+		62449087208C975300CA0BBB /* SignInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449086208C975300CA0BBB /* SignInTableViewController.swift */; };
+		62449089208C97B800CA0BBB /* SignInTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449088208C97B800CA0BBB /* SignInTableViewDataSource.swift */; };
+		6244908B208C98E700CA0BBB /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6244908A208C98E700CA0BBB /* UITableView.swift */; };
+		6244908F208C99C700CA0BBB /* FormTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6244908E208C99C700CA0BBB /* FormTableViewModel.swift */; };
+		62449092208C99F700CA0BBB /* TableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449091208C99F700CA0BBB /* TableViewCellType.swift */; };
+		62449094208C9AD300CA0BBB /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449093208C9AD300CA0BBB /* FormTableViewCell.swift */; };
 		831934E77ABD7D39A1E2389C /* Pods_App_FireBoss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C76601FBF296AEDBF7A05D /* Pods_App_FireBoss.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F99BE433ABC4EB126046DFE /* Pods-App-FireBoss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-FireBoss.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App-FireBoss/Pods-App-FireBoss.debug.xcconfig"; sourceTree = "<group>"; };
-		363B2571208A773400049A01 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		363B2572208A773400049A01 /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
 		363B2575208A7C9100049A01 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		363B2576208A7C9100049A01 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		36BD6A98208A6F4800D6C351 /* FireBoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BD6A9B208A6F4800D6C351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		36BD6A9D208A6F4800D6C351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		36BD6AA0208A6F4800D6C351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36BD6AA2208A6F4900D6C351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		36BD6AA5208A6F4900D6C351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36BD6AA7208A6F4900D6C351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62449080208C95A100CA0BBB /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		62449082208C96AE00CA0BBB /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
+		62449086208C975300CA0BBB /* SignInTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewController.swift; sourceTree = "<group>"; };
+		62449088208C97B800CA0BBB /* SignInTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewDataSource.swift; sourceTree = "<group>"; };
+		6244908A208C98E700CA0BBB /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		6244908E208C99C700CA0BBB /* FormTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewModel.swift; sourceTree = "<group>"; };
+		62449091208C99F700CA0BBB /* TableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellType.swift; sourceTree = "<group>"; };
+		62449093208C9AD300CA0BBB /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		6ACD14F58958485B0A06A223 /* Pods-App-FireBoss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-FireBoss.release.xcconfig"; path = "Pods/Target Support Files/Pods-App-FireBoss/Pods-App-FireBoss.release.xcconfig"; sourceTree = "<group>"; };
 		72C76601FBF296AEDBF7A05D /* Pods_App_FireBoss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_FireBoss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,12 +79,10 @@
 		36BD6A9A208A6F4800D6C351 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				363B2571208A773400049A01 /* SignInViewController.swift */,
-				363B2572208A773400049A01 /* SignInView.xib */,
+				62449090208C99DE00CA0BBB /* TableViewCells */,
+				6244908D208C99A800CA0BBB /* SignIn */,
+				6244908C208C995700CA0BBB /* Extensions */,
 				36BD6A9B208A6F4800D6C351 /* AppDelegate.swift */,
-				36BD6A9D208A6F4800D6C351 /* ViewController.swift */,
-				363B2575208A7C9100049A01 /* TextFieldTableViewCell.swift */,
-				363B2576208A7C9100049A01 /* TextFieldTableViewCell.xib */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -84,9 +90,8 @@
 		36BD6AAD208A6F5800D6C351 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				36BD6A9F208A6F4800D6C351 /* Main.storyboard */,
 				36BD6AA2208A6F4900D6C351 /* Assets.xcassets */,
-				36BD6AA4208A6F4900D6C351 /* LaunchScreen.storyboard */,
+				62449080208C95A100CA0BBB /* LaunchScreen.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -97,6 +102,37 @@
 				36BD6AA7208A6F4900D6C351 /* Info.plist */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		6244908C208C995700CA0BBB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6244908A208C98E700CA0BBB /* UITableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6244908D208C99A800CA0BBB /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				62449086208C975300CA0BBB /* SignInTableViewController.swift */,
+				62449088208C97B800CA0BBB /* SignInTableViewDataSource.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		62449090208C99DE00CA0BBB /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				6244908E208C99C700CA0BBB /* FormTableViewModel.swift */,
+				363B2575208A7C9100049A01 /* TextFieldTableViewCell.swift */,
+				363B2576208A7C9100049A01 /* TextFieldTableViewCell.xib */,
+				62449082208C96AE00CA0BBB /* ButtonTableViewCell.swift */,
+				62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */,
+				62449091208C99F700CA0BBB /* TableViewCellType.swift */,
+				62449093208C9AD300CA0BBB /* FormTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		8C0F74DB9356A34CEE5D0991 /* Frameworks */ = {
@@ -177,11 +213,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				363B2574208A773400049A01 /* SignInView.xib in Resources */,
-				36BD6AA6208A6F4900D6C351 /* LaunchScreen.storyboard in Resources */,
+				62449081208C95A100CA0BBB /* LaunchScreen.xib in Resources */,
+				62449085208C96AE00CA0BBB /* ButtonTableViewCell.xib in Resources */,
 				363B2578208A7C9100049A01 /* TextFieldTableViewCell.xib in Resources */,
 				36BD6AA3208A6F4900D6C351 /* Assets.xcassets in Resources */,
-				36BD6AA1208A6F4800D6C351 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,33 +285,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36BD6A9E208A6F4800D6C351 /* ViewController.swift in Sources */,
+				62449092208C99F700CA0BBB /* TableViewCellType.swift in Sources */,
 				36BD6A9C208A6F4800D6C351 /* AppDelegate.swift in Sources */,
-				363B2573208A773400049A01 /* SignInViewController.swift in Sources */,
+				62449084208C96AE00CA0BBB /* ButtonTableViewCell.swift in Sources */,
+				62449094208C9AD300CA0BBB /* FormTableViewCell.swift in Sources */,
+				62449089208C97B800CA0BBB /* SignInTableViewDataSource.swift in Sources */,
+				6244908B208C98E700CA0BBB /* UITableView.swift in Sources */,
 				363B2577208A7C9100049A01 /* TextFieldTableViewCell.swift in Sources */,
+				62449087208C975300CA0BBB /* SignInTableViewController.swift in Sources */,
+				6244908F208C99C700CA0BBB /* FormTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		36BD6A9F208A6F4800D6C351 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36BD6AA0208A6F4800D6C351 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		36BD6AA4208A6F4900D6C351 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36BD6AA5208A6F4900D6C351 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		36BD6AA8208A6F4900D6C351 /* Debug */ = {
