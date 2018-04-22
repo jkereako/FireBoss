@@ -15,22 +15,29 @@ final class ButtonTableViewCell: UITableViewCell, FormTableViewCell {
                 assertionFailure("Expected a value")
                 return
             }
-            
+
+            switch model.type {
+            case .button(let target, let action):
+                button.addTarget(target, action: action, for: .touchUpInside)
+            default:
+                break
+            }
+
             button.setTitle(model.label, for: .normal)
         }
     }
-    
+
     @IBOutlet private weak var button: UIButton!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         button.setTitle(nil, for: .normal)
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
     

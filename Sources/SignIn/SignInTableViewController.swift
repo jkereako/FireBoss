@@ -10,10 +10,10 @@ import UIKit
 
 final class SignInTableViewController: UITableViewController {
     private var dataSource: SignInTableViewDataSource?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Hard-code the view model
         let viewModel = [
             FormTableViewModel(
@@ -31,20 +31,20 @@ final class SignInTableViewController: UITableViewController {
                 value: "",
                 type: .button(target: self, action: #selector(buttonAction(_:))))
         ]
-
+        
         dataSource = SignInTableViewDataSource(tableView: tableView)
         dataSource?.viewModel = viewModel
-
+        
         tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-
-        tableView.endEditing(true)
+        
+        view.endEditing(true)
     }
 }
 
@@ -53,12 +53,13 @@ extension SignInTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
     }
-
+    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         return true
     }
 }
 
+// MARK: - Target-actions
 extension SignInTableViewController {
     @IBAction func buttonAction(_ sender: UIButton) {
         print("TEST")
