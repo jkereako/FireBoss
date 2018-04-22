@@ -15,4 +15,12 @@ extension UITableView {
             self.register(nib, forCellReuseIdentifier: reuseIdentifier)
         }
     }
+
+    func indexPath(for control: UIControl) -> IndexPath? {
+        let point: CGPoint
+        // Convert the origin of the text field to the coordinate space of the table view
+        point = control.superview?.convert(control.frame.origin, to: self) ?? .zero
+
+        return indexPathForRow(at: point)
+    }
 }

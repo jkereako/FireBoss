@@ -21,6 +21,10 @@ final class SignInTableViewDataSource: NSObject {
 
         tableView.registerNibsWithReuseIdentifierMap(reuseIdentifierMap)
     }
+
+    func viewModel(for indexPath: IndexPath) -> FormTableViewModel? {
+        return viewModel?[indexPath.row]
+    }
 }
 
 // MARK: - UITableViewDataSource

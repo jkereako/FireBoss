@@ -52,11 +52,49 @@ final class SignInTableViewController: UITableViewController {
 // MARK: - UITextFieldDelegate
 extension SignInTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let indexPath = tableView.indexPath(for: textField),
+            let model = dataSource?.viewModel(for: indexPath) else {
+                assertionFailure("Expected a value")
+                return true
+        }
+
+        switch model.type {
+        case .textField( _, let returnKeyType, _):
+            // If the return key reads "Next" or "Continue", then find the next text field
+            guard [.next, .continue].contains(returnKeyType) else {
+                return true
+            }
+
+            // Find the next table view cell
+            let cell = tableView.cellForRow(
+                at: IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            )
+
+            // Find the text field inside the cell and give it focus.
+            cell?.contentView.subviews.forEach { subview in
+                guard subview is UITextField else { return }
+
+                // Sanity check; if `subview` is the first responder, then we have a circular
+                // reference.
+                assert(
+                    !subview.isFirstResponder,
+                    "Did not expect text field to be the first responder"
+                )
+
+                // Focus on the text field
+                subview.becomeFirstResponder()
+            }
+
+            return false
+        default:
+            break
+        }
+
         return true
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return true
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
     }
 }
 
