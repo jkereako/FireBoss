@@ -39,6 +39,7 @@ final class SignInTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
+        tableView.separatorStyle = .none
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
