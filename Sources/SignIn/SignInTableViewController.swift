@@ -17,12 +17,19 @@ final class SignInTableViewController: UITableViewController {
         // Hard-code the view model
         let viewModel = [
             FormTableViewModel(
-                label: "EMAIL", value: "", type: .textField(isSecureTextEntry: false)
+                label: "EMAIL",
+                value: "",
+                type: .textField(isSecureTextEntry: false, returnKeyType: .next, delegate: self)
             ),
             FormTableViewModel(
-                label: "PASSWORD", value: "", type: .textField(isSecureTextEntry: true)
+                label: "PASSWORD",
+                value: "",
+                type: .textField(isSecureTextEntry: true,  returnKeyType: .done, delegate: self)
             ),
-            FormTableViewModel(label: "SIGN IN", value: "", type: .button)
+            FormTableViewModel(
+                label: "SIGN IN",
+                value: "",
+                type: .button(target: self, action: #selector(buttonAction(_:))))
         ]
 
         dataSource = SignInTableViewDataSource(tableView: tableView)
@@ -32,5 +39,28 @@ final class SignInTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+
+        tableView.endEditing(true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension SignInTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+}
+
+extension SignInTableViewController {
+    @IBAction func buttonAction(_ sender: UIButton) {
+        print("TEST")
     }
 }

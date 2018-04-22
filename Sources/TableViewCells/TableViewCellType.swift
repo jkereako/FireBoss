@@ -6,9 +6,11 @@
 //  Copyright © 2018 AlexisDigital. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum TableViewCellType {
-    case textField(isSecureTextEntry: Bool)
-    case button
+    case textField(
+        isSecureTextEntry: Bool, returnKeyType: UIReturnKeyType,delegate: UITextFieldDelegate
+    )
+    case button(target: NSObject, action: Selector)
 }
