@@ -17,10 +17,12 @@ final class TextFieldTableViewCell: UITableViewCell, FormTableViewCell {
             }
 
             switch model.type {
-            case .textField(let isSecureTextEntry, let returnKeyType, let delegate):
+            case .textField(let isSecureTextEntry, let keyboardType, let returnKeyType, let delegate):
                 textField.isSecureTextEntry = isSecureTextEntry
                 textField.returnKeyType = returnKeyType
                 textField.delegate = delegate
+                textField.keyboardType = keyboardType
+                textField.autocorrectionType = .no
             default:
                 break
             }

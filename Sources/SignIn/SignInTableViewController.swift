@@ -19,12 +19,22 @@ final class SignInTableViewController: UITableViewController {
             FormTableViewModel(
                 label: "EMAIL",
                 value: "",
-                type: .textField(isSecureTextEntry: false, returnKeyType: .next, delegate: self)
+                type: .textField(
+                isSecureTextEntry: false,
+                keyboardType: .emailAddress,
+                returnKeyType: .next,
+                delegate: self
+                )
             ),
             FormTableViewModel(
                 label: "PASSWORD",
                 value: "",
-                type: .textField(isSecureTextEntry: true,  returnKeyType: .done, delegate: self)
+                type: .textField(
+                    isSecureTextEntry: true,
+                    keyboardType: .default,
+                    returnKeyType: .done,
+                    delegate: self
+                )
             ),
             FormTableViewModel(
                 label: "SIGN IN",
@@ -41,12 +51,6 @@ final class SignInTableViewController: UITableViewController {
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        view.endEditing(true)
-    }
 }
 
 // MARK: - UITextFieldDelegate
@@ -59,9 +63,10 @@ extension SignInTableViewController: UITextFieldDelegate {
         }
 
         switch model.type {
-        case .textField( _, let returnKeyType, _):
+        case .textField( _, _, let returnKeyType, _):
             // If the return key reads "Next" or "Continue", then find the next text field
             guard [.next, .continue].contains(returnKeyType) else {
+                textField.endEditing(true)
                 return true
             }
 
@@ -101,6 +106,6 @@ extension SignInTableViewController: UITextFieldDelegate {
 // MARK: - Target-actions
 extension SignInTableViewController {
     @IBAction func buttonAction(_ sender: UIButton) {
-        print("TEST")
+        view.endEditing(true)
     }
 }

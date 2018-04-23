@@ -10,7 +10,10 @@ import UIKit
 
 enum TableViewCellType {
     case textField(
-        isSecureTextEntry: Bool, returnKeyType: UIReturnKeyType,delegate: UITextFieldDelegate
+        isSecureTextEntry: Bool,
+        keyboardType: UIKeyboardType,
+        returnKeyType: UIReturnKeyType,
+        delegate: UITextFieldDelegate
     )
     case button(target: NSObject, action: Selector)
 }
