@@ -20,6 +20,8 @@
 		6244908F208C99C700CA0BBB /* FormTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6244908E208C99C700CA0BBB /* FormTableViewModel.swift */; };
 		62449092208C99F700CA0BBB /* TableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449091208C99F700CA0BBB /* TableViewCellType.swift */; };
 		62449094208C9AD300CA0BBB /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449093208C9AD300CA0BBB /* FormTableViewCell.swift */; };
+		62A21543208D62DB00794E41 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A21541208D62DB00794E41 /* HomeViewController.swift */; };
+		62A21544208D62DB00794E41 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62A21542208D62DB00794E41 /* HomeView.xib */; };
 		62F29753208D315000990B94 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F29751208D315000990B94 /* SignInViewController.swift */; };
 		62F29754208D315000990B94 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62F29752208D315000990B94 /* SignInView.xib */; };
 		62F29756208D327500990B94 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F29755208D327500990B94 /* UIViewController.swift */; };
@@ -44,6 +46,8 @@
 		6244908E208C99C700CA0BBB /* FormTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewModel.swift; sourceTree = "<group>"; };
 		62449091208C99F700CA0BBB /* TableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellType.swift; sourceTree = "<group>"; };
 		62449093208C9AD300CA0BBB /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
+		62A21541208D62DB00794E41 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		62A21542208D62DB00794E41 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		62F29751208D315000990B94 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		62F29752208D315000990B94 /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
 		62F29755208D327500990B94 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				6244908D208C99A800CA0BBB /* SignIn */,
 				6244908C208C995700CA0BBB /* Extensions */,
 				36BD6A9B208A6F4800D6C351 /* AppDelegate.swift */,
+				62A21541208D62DB00794E41 /* HomeViewController.swift */,
+				62A21542208D62DB00794E41 /* HomeView.xib */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 				62449085208C96AE00CA0BBB /* ButtonTableViewCell.xib in Resources */,
 				363B2578208A7C9100049A01 /* TextFieldTableViewCell.xib in Resources */,
 				36BD6AA3208A6F4900D6C351 /* Assets.xcassets in Resources */,
+				62A21544208D62DB00794E41 /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +316,7 @@
 				363B2577208A7C9100049A01 /* TextFieldTableViewCell.swift in Sources */,
 				62449087208C975300CA0BBB /* SignInTableViewController.swift in Sources */,
 				62F29753208D315000990B94 /* SignInViewController.swift in Sources */,
+				62A21543208D62DB00794E41 /* HomeViewController.swift in Sources */,
 				6244908F208C99C700CA0BBB /* FormTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
