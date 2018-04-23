@@ -28,18 +28,21 @@ final class TextFieldTableViewCell: UITableViewCell, FormTableViewCell {
             }
 
             label.text = model.label
+            error.text = model.error
             textField.text = model.value
         }
     }
 
 
     @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var error: UILabel!
     @IBOutlet private weak var textField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
         label.text = nil
+        error.text = nil
         textField.placeholder = nil
         textField.text = nil
     }

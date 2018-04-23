@@ -11,5 +11,6 @@ import Foundation
 struct FormTableViewModel {
     let label: String
     let value: String
+    let error: String
     let type: TableViewCellType
 }

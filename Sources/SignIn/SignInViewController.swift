@@ -9,6 +9,7 @@
 import UIKit
 
 final class SignInViewController: UIViewController {
+    @IBOutlet private weak var formContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var formContainer: UIView!
 
     init() {
@@ -22,9 +23,11 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let vc = SignInTableViewController()
+        let formTableViewController = SignInTableViewController()
 
-        addChildViewController(vc, toView: formContainer)
+        formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * 3
+
+        addChildViewController(formTableViewController, toView: formContainer)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

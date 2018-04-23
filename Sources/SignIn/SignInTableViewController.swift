@@ -19,6 +19,7 @@ final class SignInTableViewController: UITableViewController {
             FormTableViewModel(
                 label: "EMAIL",
                 value: "",
+                error: "",
                 type: .textField(
                 isSecureTextEntry: false,
                 keyboardType: .emailAddress,
@@ -29,6 +30,7 @@ final class SignInTableViewController: UITableViewController {
             FormTableViewModel(
                 label: "PASSWORD",
                 value: "",
+                error: "",
                 type: .textField(
                     isSecureTextEntry: true,
                     keyboardType: .default,
@@ -39,6 +41,7 @@ final class SignInTableViewController: UITableViewController {
             FormTableViewModel(
                 label: "SIGN IN",
                 value: "",
+                error: "",
                 type: .button(target: self, action: #selector(buttonAction(_:))))
         ]
         
@@ -50,6 +53,7 @@ final class SignInTableViewController: UITableViewController {
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        tableView.rowHeight = 64
     }
 }
 

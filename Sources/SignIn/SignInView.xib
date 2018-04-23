@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="FireBoss" customModuleProvider="target">
             <connections>
                 <outlet property="formContainer" destination="s5K-fM-aaT" id="cC9-Mz-vZb"/>
+                <outlet property="formContainerHeightConstraint" destination="cNR-Xl-kYY" id="FAR-Av-tca"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
