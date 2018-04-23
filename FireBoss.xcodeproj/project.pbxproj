@@ -14,7 +14,7 @@
 		62449081208C95A100CA0BBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62449080208C95A100CA0BBB /* LaunchScreen.xib */; };
 		62449084208C96AE00CA0BBB /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449082208C96AE00CA0BBB /* ButtonTableViewCell.swift */; };
 		62449085208C96AE00CA0BBB /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */; };
-		62449087208C975300CA0BBB /* SignInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449086208C975300CA0BBB /* SignInTableViewController.swift */; };
+		62449087208C975300CA0BBB /* SignInFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449086208C975300CA0BBB /* SignInFormTableViewController.swift */; };
 		62449089208C97B800CA0BBB /* SignInTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449088208C97B800CA0BBB /* SignInTableViewDataSource.swift */; };
 		6244908B208C98E700CA0BBB /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6244908A208C98E700CA0BBB /* UITableView.swift */; };
 		6244908F208C99C700CA0BBB /* FormTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6244908E208C99C700CA0BBB /* FormTableViewModel.swift */; };
@@ -40,7 +40,7 @@
 		62449080208C95A100CA0BBB /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		62449082208C96AE00CA0BBB /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
-		62449086208C975300CA0BBB /* SignInTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewController.swift; sourceTree = "<group>"; };
+		62449086208C975300CA0BBB /* SignInFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFormTableViewController.swift; sourceTree = "<group>"; };
 		62449088208C97B800CA0BBB /* SignInTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewDataSource.swift; sourceTree = "<group>"; };
 		6244908A208C98E700CA0BBB /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		6244908E208C99C700CA0BBB /* FormTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewModel.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		6244908D208C99A800CA0BBB /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				62449086208C975300CA0BBB /* SignInTableViewController.swift */,
+				62449086208C975300CA0BBB /* SignInFormTableViewController.swift */,
 				62449088208C97B800CA0BBB /* SignInTableViewDataSource.swift */,
 				62F29751208D315000990B94 /* SignInViewController.swift */,
 				62F29752208D315000990B94 /* SignInView.xib */,
@@ -314,7 +314,7 @@
 				6244908B208C98E700CA0BBB /* UITableView.swift in Sources */,
 				62F29758208D34D600990B94 /* FormTableViewCellReuseIdentifier.swift in Sources */,
 				363B2577208A7C9100049A01 /* TextFieldTableViewCell.swift in Sources */,
-				62449087208C975300CA0BBB /* SignInTableViewController.swift in Sources */,
+				62449087208C975300CA0BBB /* SignInFormTableViewController.swift in Sources */,
 				62F29753208D315000990B94 /* SignInViewController.swift in Sources */,
 				62A21543208D62DB00794E41 /* HomeViewController.swift in Sources */,
 				6244908F208C99C700CA0BBB /* FormTableViewModel.swift in Sources */,

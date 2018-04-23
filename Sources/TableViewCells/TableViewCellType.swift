@@ -17,3 +17,14 @@ enum TableViewCellType {
     )
     case button(target: NSObject, action: Selector)
 }
+
+// MARK: - Equatable
+extension TableViewCellType: Equatable {
+    static func == (lhs: TableViewCellType, rhs: TableViewCellType) -> Bool {
+        switch (lhs, rhs) {
+        case (.textField, .textField): return true
+        case (.button, .button): return true
+        default: return false
+        }
+    }
+}

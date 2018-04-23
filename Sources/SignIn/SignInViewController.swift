@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol SignInViewDelegate: class {
+    func didTapSignInButton(email: String, password: String)
+}
+
 final class SignInViewController: UIViewController {
+    weak var delegate: SignInViewDelegate?
+
     @IBOutlet private weak var formContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var formContainer: UIView!
 
@@ -23,7 +29,8 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let formTableViewController = SignInTableViewController()
+        let formTableViewController = SignInFormTableViewController()
+        formTableViewController.delegate = self
 
         formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * 3
 
@@ -34,5 +41,13 @@ final class SignInViewController: UIViewController {
         super.touchesBegan(touches, with: event)
 
         view.endEditing(true)
+    }
+}
+
+// MARK: - SignInFormTableViewDelegate
+extension SignInViewController: SignInFormTableViewDelegate {
+    func didTapSignInButton(email: String, password: String) {
+        // Pass this up the chain
+        delegate?.didTapSignInButton(email: email, password: password)
     }
 }

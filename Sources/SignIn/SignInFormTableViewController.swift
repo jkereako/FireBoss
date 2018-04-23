@@ -1,5 +1,5 @@
 //
-//  SignInTableViewController.swift
+//  SignInFormTableViewController.swift
 //  FireBoss
 //
 //  Created by Jeff Kereakoglow on 4/22/18.
@@ -8,7 +8,12 @@
 
 import UIKit
 
-final class SignInTableViewController: UITableViewController {
+// Created this delegate to avoid confusion
+protocol SignInFormTableViewDelegate: SignInViewDelegate {}
+
+final class SignInFormTableViewController: UITableViewController {
+    weak var delegate: SignInFormTableViewDelegate?
+
     private var dataSource: SignInTableViewDataSource?
     
     override func viewDidLoad() {
@@ -21,10 +26,10 @@ final class SignInTableViewController: UITableViewController {
                 value: "",
                 error: "",
                 type: .textField(
-                isSecureTextEntry: false,
-                keyboardType: .emailAddress,
-                returnKeyType: .next,
-                delegate: self
+                    isSecureTextEntry: false,
+                    keyboardType: .emailAddress,
+                    returnKeyType: .next,
+                    delegate: self
                 )
             ),
             FormTableViewModel(
@@ -58,13 +63,19 @@ final class SignInTableViewController: UITableViewController {
 }
 
 // MARK: - UITextFieldDelegate
-extension SignInTableViewController: UITextFieldDelegate {
+extension SignInFormTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let indexPath = tableView.indexPath(for: textField),
-            let model = dataSource?.viewModel(for: indexPath) else {
+            let model = dataSource?.rowModel(at: indexPath) else {
                 assertionFailure("Expected a value")
                 return true
         }
+
+        let newViewModel = FormTableViewModel(
+            label: model.label, value: textField.text ?? "", error: model.error, type: model.type
+        )
+
+        dataSource?.setRowModel(newViewModel, at: indexPath)
 
         switch model.type {
         case .textField( _, _, let returnKeyType, _):
@@ -108,8 +119,13 @@ extension SignInTableViewController: UITextFieldDelegate {
 }
 
 // MARK: - Target-actions
-extension SignInTableViewController {
+extension SignInFormTableViewController {
     @IBAction func buttonAction(_ sender: UIButton) {
         view.endEditing(true)
+
+        // This should work, don't know why it ain't
+        // let textFields = dataSource?.viewModel?.filter { $0.type == TableViewCellType.textField }
+
+        delegate?.didTapSignInButton(email: "email", password: "password")
     }
 }
