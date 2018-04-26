@@ -8,6 +8,9 @@
 
 import UIKit
 
+// TODO: Make this an internal type (interal to FormViewController) and expose a public type which
+// omits the delegate from .textfField and target and action from .button. The preferred
+// communication pattern between FormViewController and its owning view controller is a delegate
 enum TableViewCellType {
     case textField(
         isSecureTextEntry: Bool,
