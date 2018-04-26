@@ -14,13 +14,15 @@
 		62449081208C95A100CA0BBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62449080208C95A100CA0BBB /* LaunchScreen.xib */; };
 		62449084208C96AE00CA0BBB /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449082208C96AE00CA0BBB /* ButtonTableViewCell.swift */; };
 		62449085208C96AE00CA0BBB /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */; };
-		62449087208C975300CA0BBB /* SignInFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449086208C975300CA0BBB /* SignInFormTableViewController.swift */; };
-		62449089208C97B800CA0BBB /* SignInTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449088208C97B800CA0BBB /* SignInTableViewDataSource.swift */; };
+		62449087208C975300CA0BBB /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449086208C975300CA0BBB /* FormTableViewController.swift */; };
+		62449089208C97B800CA0BBB /* FormTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449088208C97B800CA0BBB /* FormTableViewDataSource.swift */; };
 		6244908B208C98E700CA0BBB /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6244908A208C98E700CA0BBB /* UITableView.swift */; };
 		6244908F208C99C700CA0BBB /* FormTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6244908E208C99C700CA0BBB /* FormTableViewModel.swift */; };
 		62449092208C99F700CA0BBB /* TableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449091208C99F700CA0BBB /* TableViewCellType.swift */; };
 		62449094208C9AD300CA0BBB /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449093208C9AD300CA0BBB /* FormTableViewCell.swift */; };
 		626A671020915AF800A921CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 626A670F20915AF800A921CE /* GoogleService-Info.plist */; };
+		626A671420915CC100A921CE /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A671220915CC100A921CE /* CreateAccountViewController.swift */; };
+		626A671520915CC100A921CE /* CreateAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 626A671320915CC100A921CE /* CreateAccountView.xib */; };
 		62A21543208D62DB00794E41 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A21541208D62DB00794E41 /* HomeViewController.swift */; };
 		62A21544208D62DB00794E41 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62A21542208D62DB00794E41 /* HomeView.xib */; };
 		62F29753208D315000990B94 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F29751208D315000990B94 /* SignInViewController.swift */; };
@@ -41,13 +43,15 @@
 		62449080208C95A100CA0BBB /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		62449082208C96AE00CA0BBB /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
-		62449086208C975300CA0BBB /* SignInFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFormTableViewController.swift; sourceTree = "<group>"; };
-		62449088208C97B800CA0BBB /* SignInTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewDataSource.swift; sourceTree = "<group>"; };
+		62449086208C975300CA0BBB /* FormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
+		62449088208C97B800CA0BBB /* FormTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewDataSource.swift; sourceTree = "<group>"; };
 		6244908A208C98E700CA0BBB /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		6244908E208C99C700CA0BBB /* FormTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewModel.swift; sourceTree = "<group>"; };
 		62449091208C99F700CA0BBB /* TableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellType.swift; sourceTree = "<group>"; };
 		62449093208C9AD300CA0BBB /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		626A670F20915AF800A921CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		626A671220915CC100A921CE /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		626A671320915CC100A921CE /* CreateAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountView.xib; sourceTree = "<group>"; };
 		62A21541208D62DB00794E41 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		62A21542208D62DB00794E41 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		62F29751208D315000990B94 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +97,8 @@
 		36BD6A9A208A6F4800D6C351 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				62449090208C99DE00CA0BBB /* TableViewCells */,
+				626A671620915DE100A921CE /* Form */,
+				626A671120915C7B00A921CE /* CreateAccount */,
 				6244908D208C99A800CA0BBB /* SignIn */,
 				6244908C208C995700CA0BBB /* Extensions */,
 				36BD6A9B208A6F4800D6C351 /* AppDelegate.swift */,
@@ -133,8 +138,6 @@
 		6244908D208C99A800CA0BBB /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				62449086208C975300CA0BBB /* SignInFormTableViewController.swift */,
-				62449088208C97B800CA0BBB /* SignInTableViewDataSource.swift */,
 				62F29751208D315000990B94 /* SignInViewController.swift */,
 				62F29752208D315000990B94 /* SignInView.xib */,
 			);
@@ -154,6 +157,25 @@
 				62F29757208D34D600990B94 /* FormTableViewCellReuseIdentifier.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		626A671120915C7B00A921CE /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				626A671220915CC100A921CE /* CreateAccountViewController.swift */,
+				626A671320915CC100A921CE /* CreateAccountView.xib */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		626A671620915DE100A921CE /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				62449090208C99DE00CA0BBB /* TableViewCells */,
+				62449086208C975300CA0BBB /* FormTableViewController.swift */,
+				62449088208C97B800CA0BBB /* FormTableViewDataSource.swift */,
+			);
+			path = Form;
 			sourceTree = "<group>";
 		};
 		8C0F74DB9356A34CEE5D0991 /* Frameworks */ = {
@@ -234,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				626A671520915CC100A921CE /* CreateAccountView.xib in Resources */,
 				62F29754208D315000990B94 /* SignInView.xib in Resources */,
 				62449081208C95A100CA0BBB /* LaunchScreen.xib in Resources */,
 				62449085208C96AE00CA0BBB /* ButtonTableViewCell.xib in Resources */,
@@ -309,16 +332,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				626A671420915CC100A921CE /* CreateAccountViewController.swift in Sources */,
 				62449092208C99F700CA0BBB /* TableViewCellType.swift in Sources */,
 				36BD6A9C208A6F4800D6C351 /* AppDelegate.swift in Sources */,
 				62449084208C96AE00CA0BBB /* ButtonTableViewCell.swift in Sources */,
 				62F29756208D327500990B94 /* UIViewController.swift in Sources */,
 				62449094208C9AD300CA0BBB /* FormTableViewCell.swift in Sources */,
-				62449089208C97B800CA0BBB /* SignInTableViewDataSource.swift in Sources */,
+				62449089208C97B800CA0BBB /* FormTableViewDataSource.swift in Sources */,
 				6244908B208C98E700CA0BBB /* UITableView.swift in Sources */,
 				62F29758208D34D600990B94 /* FormTableViewCellReuseIdentifier.swift in Sources */,
 				363B2577208A7C9100049A01 /* TextFieldTableViewCell.swift in Sources */,
-				62449087208C975300CA0BBB /* SignInFormTableViewController.swift in Sources */,
+				62449087208C975300CA0BBB /* FormTableViewController.swift in Sources */,
 				62F29753208D315000990B94 /* SignInViewController.swift in Sources */,
 				62A21543208D62DB00794E41 /* HomeViewController.swift in Sources */,
 				6244908F208C99C700CA0BBB /* FormTableViewModel.swift in Sources */,

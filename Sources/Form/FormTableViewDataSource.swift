@@ -1,5 +1,5 @@
 //
-//  SignInTableViewDataSource.swift
+//  FormTableViewDataSource.swift
 //  FireBoss
 //
 //  Created by Jeff Kereakoglow on 4/22/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SignInTableViewDataSource: NSObject {
+final class FormTableViewDataSource: NSObject {
     var viewModel: [FormTableViewModel]?
     
     init(tableView: UITableView) {
@@ -33,7 +33,7 @@ final class SignInTableViewDataSource: NSObject {
 }
 
 // MARK: - UITableViewDataSource
-extension SignInTableViewDataSource: UITableViewDataSource {
+extension FormTableViewDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

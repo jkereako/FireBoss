@@ -18,6 +18,8 @@ final class SignInViewController: UIViewController {
     @IBOutlet private weak var formContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var formContainer: UIView!
 
+    private var formTableViewController: FormTableViewController!
+
     init() {
         super.init(nibName: "SignInView", bundle: Bundle(for: SignInViewController.self))
     }
@@ -29,8 +31,41 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let formTableViewController = SignInFormTableViewController()
-        formTableViewController.delegate = self
+        formTableViewController = FormTableViewController()
+
+        // Hard-code the view model
+        let viewModel = [
+            FormTableViewModel(
+                label: "EMAIL",
+                value: "",
+                error: "",
+                type: .textField(
+                    isSecureTextEntry: false,
+                    keyboardType: .emailAddress,
+                    returnKeyType: .next,
+                    delegate: formTableViewController
+                )
+            ),
+            FormTableViewModel(
+                label: "PASSWORD",
+                value: "",
+                error: "",
+                type: .textField(
+                    isSecureTextEntry: true,
+                    keyboardType: .default,
+                    returnKeyType: .done,
+                    delegate: formTableViewController
+                )
+            ),
+            FormTableViewModel(
+                label: "SIGN IN",
+                value: "",
+                error: "",
+                type: .button(target: self, action: #selector(buttonAction(_:)))
+            )
+        ]
+
+        formTableViewController.viewModel = viewModel
 
         formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * 3
 
@@ -44,10 +79,14 @@ final class SignInViewController: UIViewController {
     }
 }
 
-// MARK: - SignInFormTableViewDelegate
-extension SignInViewController: SignInFormTableViewDelegate {
-    func didTapSignInButton(email: String, password: String) {
-        // Pass this up the chain
-        delegate?.didTapSignInButton(email: email, password: password)
+
+// MARK: - Target-actions
+extension SignInViewController {
+    @IBAction func buttonAction(_ sender: UIButton) {
+        view.endEditing(true)
+
+        print(formTableViewController.viewModel)
+
+        delegate?.didTapSignInButton(email: "email", password: "password")
     }
 }
