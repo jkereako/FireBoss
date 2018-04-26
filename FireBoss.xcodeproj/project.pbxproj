@@ -20,6 +20,7 @@
 		6244908F208C99C700CA0BBB /* FormTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6244908E208C99C700CA0BBB /* FormTableViewModel.swift */; };
 		62449092208C99F700CA0BBB /* TableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449091208C99F700CA0BBB /* TableViewCellType.swift */; };
 		62449094208C9AD300CA0BBB /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449093208C9AD300CA0BBB /* FormTableViewCell.swift */; };
+		626A671020915AF800A921CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 626A670F20915AF800A921CE /* GoogleService-Info.plist */; };
 		62A21543208D62DB00794E41 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A21541208D62DB00794E41 /* HomeViewController.swift */; };
 		62A21544208D62DB00794E41 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62A21542208D62DB00794E41 /* HomeView.xib */; };
 		62F29753208D315000990B94 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F29751208D315000990B94 /* SignInViewController.swift */; };
@@ -46,6 +47,7 @@
 		6244908E208C99C700CA0BBB /* FormTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewModel.swift; sourceTree = "<group>"; };
 		62449091208C99F700CA0BBB /* TableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellType.swift; sourceTree = "<group>"; };
 		62449093208C9AD300CA0BBB /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
+		626A670F20915AF800A921CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62A21541208D62DB00794E41 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		62A21542208D62DB00794E41 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		62F29751208D315000990B94 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		36BD6AAE208A6F6900D6C351 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				626A670F20915AF800A921CE /* GoogleService-Info.plist */,
 				36BD6AA7208A6F4900D6C351 /* Info.plist */,
 			);
 			path = SupportFiles;
@@ -237,6 +240,7 @@
 				363B2578208A7C9100049A01 /* TextFieldTableViewCell.xib in Resources */,
 				36BD6AA3208A6F4900D6C351 /* Assets.xcassets in Resources */,
 				62A21544208D62DB00794E41 /* HomeView.xib in Resources */,
+				626A671020915AF800A921CE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
