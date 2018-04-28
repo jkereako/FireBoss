@@ -19,7 +19,7 @@ final class CreateAccountViewController: UIViewController {
     @IBOutlet private weak var formContainer: UIView!
 
     init() {
-        super.init(nibName: "SignInView", bundle: Bundle(for: SignInViewController.self))
+        super.init(nibName: "CreateAccountView", bundle: Bundle(for: SignInViewController.self))
     }
 
     required init?(coder aDecoder: NSCoder) {
