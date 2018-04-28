@@ -33,6 +33,7 @@ final class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         formTableViewController = FormTableViewController()
+        formTableViewController.delegate = self
 
         // Hard-code the view model
         let viewModel = [
@@ -62,7 +63,7 @@ final class SignInViewController: UIViewController {
                 label: "SIGN IN",
                 value: "",
                 error: "",
-                type: .button(target: self, action: #selector(signInAction(_:)))
+                type: .button(target: nil, action: nil)
             )
         ]
 
@@ -79,15 +80,18 @@ final class SignInViewController: UIViewController {
     }
 }
 
-
-// MARK: - Target-actions
-extension SignInViewController {
-    @IBAction func signInAction(_ sender: UIButton) {
+// MARK: - FormTableViewDelegate
+extension SignInViewController: FormTableViewDelegate {
+    func didSubmitForm(viewModel: [FormTableViewModel]) {
         view.endEditing(true)
 
         delegate?.didTapSignInButton(email: "email", password: "password")
     }
+}
 
+
+// MARK: - Target-actions
+extension SignInViewController {
     @IBAction func createAccountAction(_ sender: UIButton) {
         view.endEditing(true)
 

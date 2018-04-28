@@ -18,7 +18,9 @@ final class ButtonTableViewCell: UITableViewCell, FormTableViewCell {
 
             switch model.type {
             case .button(let target, let action):
-                button.addTarget(target, action: action, for: .touchUpInside)
+                guard let t = target, let a = action else { return }
+
+                button.addTarget(t, action: a, for: .touchUpInside)
             default:
                 break
             }

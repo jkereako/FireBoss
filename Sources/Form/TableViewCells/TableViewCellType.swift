@@ -18,7 +18,7 @@ enum TableViewCellType {
         returnKeyType: UIReturnKeyType,
         delegate: UITextFieldDelegate
     )
-    case button(target: NSObject, action: Selector)
+    case button(target: NSObject?, action: Selector?)
 }
 
 // MARK: - Equatable

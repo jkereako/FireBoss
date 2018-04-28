@@ -34,6 +34,7 @@ final class CreateAccountViewController: UIViewController {
         )
 
         let formTableViewController = FormTableViewController()
+        formTableViewController.delegate = self
 
         // Hard-code the view model
         let viewModel = [
@@ -63,7 +64,7 @@ final class CreateAccountViewController: UIViewController {
                 label: "CREATE ACCOUNT",
                 value: "",
                 error: "",
-                type: .button(target: self, action: #selector(createAccountAction(_:)))
+                type: .button(target: nil, action: nil)
             )
         ]
 
@@ -80,12 +81,17 @@ final class CreateAccountViewController: UIViewController {
     }
 }
 
-// MARK: - Target-actions
-extension CreateAccountViewController {
-    @IBAction func createAccountAction(_ sender: UIBarButtonItem) {
+// MARK: - FormTableViewDelegate
+extension CreateAccountViewController: FormTableViewDelegate {
+    func didSubmitForm(viewModel: [FormTableViewModel]) {
+        view.endEditing(true)
+
         delegate?.didTapCreateAccountButton(email: "email", password: "password")
     }
+}
 
+// MARK: - Target-actions
+extension CreateAccountViewController {
     @IBAction func doneAction(_ sender: UIBarButtonItem) {
         view.endEditing(true)
 

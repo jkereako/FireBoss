@@ -8,15 +8,43 @@
 
 import UIKit
 
-// Created this delegate to avoid confusion
+protocol FormTableViewDelegate: class {
+    func didSubmitForm(viewModel: [FormTableViewModel])
+}
 
 final class FormTableViewController: UITableViewController {
+    weak var delegate: FormTableViewDelegate?
     var viewModel: [FormTableViewModel]!
 
     private var dataSource: FormTableViewDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        var buttonIndexes = [Int]()
+
+        // Find all of the buttons in the view model
+        for i in 0..<viewModel.count {
+            switch viewModel[i].type {
+            case .button:
+                buttonIndexes.append(i)
+
+            default:
+                break
+            }
+        }
+
+        // HACK: Reset the target of each button to this class
+        buttonIndexes.forEach {
+            let old = viewModel[$0]
+
+            viewModel[$0] = FormTableViewModel(
+                label: old.label,
+                value: old.value,
+                error: old.error,
+                type: .button(target: self, action: #selector(submitAction(_:)))
+            )
+        }
 
         dataSource = FormTableViewDataSource(tableView: tableView)
         dataSource?.viewModel = viewModel
@@ -32,7 +60,10 @@ final class FormTableViewController: UITableViewController {
 
 // MARK: - UITextFieldDelegate
 extension FormTableViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    // We use this method to capture the user's input as he types
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+
         guard let indexPath = tableView.indexPath(for: textField),
             let model = dataSource?.rowModel(at: indexPath) else {
                 assertionFailure("Expected a value")
@@ -44,6 +75,16 @@ extension FormTableViewController: UITextFieldDelegate {
         )
 
         dataSource?.setRowModel(newViewModel, at: indexPath)
+
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let indexPath = tableView.indexPath(for: textField),
+            let model = dataSource?.rowModel(at: indexPath) else {
+                assertionFailure("Expected a value")
+                return true
+        }
 
         switch model.type {
         case .textField( _, _, let returnKeyType, _):
@@ -83,5 +124,17 @@ extension FormTableViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
+    }
+}
+
+// MARK: - Target-actions
+extension FormTableViewController {
+    @IBAction func submitAction(_ sender: UIButton) {
+        guard let ds = dataSource, let vm = ds.viewModel else {
+            assertionFailure("Expected a value")
+            return
+        }
+
+        delegate?.didSubmitForm(viewModel: vm)
     }
 }
