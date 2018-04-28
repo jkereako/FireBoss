@@ -36,9 +36,17 @@ extension AuthenticationCoordinator: SignInViewDelegate {
 
     func didTapCreateAccountButton() {
         let viewController = CreateAccountViewController()
+        viewController.delegate = self
 
         navigationController.present(
             UINavigationController(rootViewController: viewController), animated: true
         )
+    }
+}
+
+// MARK: - CreateAccountViewDelegate
+extension AuthenticationCoordinator: CreateAccountViewDelegate {
+    func didTapCreateAccountButton(email: String, password: String) {
+        print(#function)
     }
 }

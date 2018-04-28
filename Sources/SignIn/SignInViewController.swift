@@ -62,13 +62,12 @@ final class SignInViewController: UIViewController {
                 label: "SIGN IN",
                 value: "",
                 error: "",
-                type: .button(target: self, action: #selector(buttonAction(_:)))
+                type: .button(target: self, action: #selector(signInAction(_:)))
             )
         ]
 
         formTableViewController.viewModel = viewModel
-
-        formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * 3
+        formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * CGFloat(viewModel.count * 2)
 
         addChildViewController(formTableViewController, toView: formContainer)
     }
@@ -83,7 +82,7 @@ final class SignInViewController: UIViewController {
 
 // MARK: - Target-actions
 extension SignInViewController {
-    @IBAction func buttonAction(_ sender: UIButton) {
+    @IBAction func signInAction(_ sender: UIButton) {
         view.endEditing(true)
 
         delegate?.didTapSignInButton(email: "email", password: "password")

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CreateAccountViewDelegate: class {
-    func didTapSignInButton(email: String, password: String)
+    func didTapCreateAccountButton(email: String, password: String)
 }
 
 final class CreateAccountViewController: UIViewController {
@@ -30,12 +30,45 @@ final class CreateAccountViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .done, target: self, action: #selector(doneBarButtonItemAction(_:))
+            barButtonSystemItem: .done, target: self, action: #selector(doneAction(_:))
         )
 
         let formTableViewController = FormTableViewController()
 
-        formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * 3
+        // Hard-code the view model
+        let viewModel = [
+            FormTableViewModel(
+                label: "EMAIL",
+                value: "",
+                error: "",
+                type: .textField(
+                    isSecureTextEntry: false,
+                    keyboardType: .emailAddress,
+                    returnKeyType: .next,
+                    delegate: formTableViewController
+                )
+            ),
+            FormTableViewModel(
+                label: "PASSWORD",
+                value: "",
+                error: "",
+                type: .textField(
+                    isSecureTextEntry: true,
+                    keyboardType: .default,
+                    returnKeyType: .done,
+                    delegate: formTableViewController
+                )
+            ),
+            FormTableViewModel(
+                label: "CREATE ACCOUNT",
+                value: "",
+                error: "",
+                type: .button(target: self, action: #selector(createAccountAction(_:)))
+            )
+        ]
+
+        formTableViewController.viewModel = viewModel
+        formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * CGFloat(viewModel.count * 2)
 
         addChildViewController(formTableViewController, toView: formContainer)
     }
@@ -49,7 +82,13 @@ final class CreateAccountViewController: UIViewController {
 
 // MARK: - Target-actions
 extension CreateAccountViewController {
-    @IBAction func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
+    @IBAction func createAccountAction(_ sender: UIBarButtonItem) {
+        delegate?.didTapCreateAccountButton(email: "email", password: "password")
+    }
+
+    @IBAction func doneAction(_ sender: UIBarButtonItem) {
+        view.endEditing(true)
+
         navigationController?.dismiss(animated: true)
     }
 }
