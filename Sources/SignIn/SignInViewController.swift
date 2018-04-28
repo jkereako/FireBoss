@@ -10,6 +10,7 @@ import UIKit
 
 protocol SignInViewDelegate: class {
     func didTapSignInButton(email: String, password: String)
+    func didTapCreateAccountButton()
 }
 
 final class SignInViewController: UIViewController {
@@ -85,8 +86,12 @@ extension SignInViewController {
     @IBAction func buttonAction(_ sender: UIButton) {
         view.endEditing(true)
 
-        print(formTableViewController.viewModel)
-
         delegate?.didTapSignInButton(email: "email", password: "password")
+    }
+
+    @IBAction func createAccountAction(_ sender: UIButton) {
+        view.endEditing(true)
+
+        delegate?.didTapCreateAccountButton()
     }
 }

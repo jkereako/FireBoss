@@ -29,6 +29,10 @@ final class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .done, target: self, action: #selector(doneBarButtonItemAction(_:))
+        )
+
         let formTableViewController = FormTableViewController()
 
         formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * 3
@@ -40,5 +44,12 @@ final class CreateAccountViewController: UIViewController {
         super.touchesBegan(touches, with: event)
 
         view.endEditing(true)
+    }
+}
+
+// MARK: - Target-actions
+extension CreateAccountViewController {
+    @IBAction func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
+        navigationController?.dismiss(animated: true)
     }
 }

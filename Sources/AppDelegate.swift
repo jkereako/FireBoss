@@ -12,6 +12,7 @@ import Firebase
 @UIApplicationMain
 final class AppDelegate: UIResponder {
     var window: UIWindow?
+    var appCoordinator: AppCoordinator?
 }
 
 // MARK: - UIApplicationDelegate
@@ -19,15 +20,12 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        FirebaseApp.configure()
-        
-        let viewController = SignInViewController()
-
         // The ol' fashioned way.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = viewController
-        window!.makeKeyAndVisible()
 
+        appCoordinator = AppCoordinator(window: window!)
+        appCoordinator!.start()
+        
         return true
     }
 }
