@@ -15,26 +15,26 @@ protocol SignInViewDelegate: class {
 
 final class SignInViewController: UIViewController {
     weak var delegate: SignInViewDelegate?
-    
+
     @IBOutlet private weak var formContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var formContainer: UIView!
-    
+
     private var formTableViewController: FormTableViewController!
-    
+
     init() {
         super.init(nibName: "SignInView", bundle: Bundle(for: SignInViewController.self))
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         formTableViewController = FormTableViewController()
         formTableViewController.delegate = self
-        
+
         // Hard-code the view model
         let viewModel = [
             FormTableViewModel(
@@ -60,16 +60,16 @@ final class SignInViewController: UIViewController {
                 label: "SIGN IN"
             )
         ]
-        
+
         formTableViewController.viewModel = viewModel
         formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * CGFloat(viewModel.count * 2)
-        
+
         addChildViewController(formTableViewController, toView: formContainer)
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        
+
         view.endEditing(true)
     }
 }
@@ -78,9 +78,9 @@ final class SignInViewController: UIViewController {
 extension SignInViewController: FormTableViewDelegate {
     func didSubmitForm(viewModel: [FormTableViewModel]) {
         view.endEditing(true)
-        
+
         var values = [FormValueModel]()
-        
+
         viewModel.forEach {
             switch $0.type {
             case .textField:
@@ -88,9 +88,9 @@ extension SignInViewController: FormTableViewDelegate {
             default:
                 break
             }
-            
+
         }
-        
+
         delegate?.didTapSignInButton(formValues: values)
     }
 }
@@ -100,7 +100,7 @@ extension SignInViewController: FormTableViewDelegate {
 extension SignInViewController {
     @IBAction func createAccountAction(_ sender: UIButton) {
         view.endEditing(true)
-        
+
         delegate?.didTapCreateAccountButton()
     }
 }

@@ -12,6 +12,7 @@
 		36BD6A9C208A6F4800D6C351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6A9B208A6F4800D6C351 /* AppDelegate.swift */; };
 		36BD6AA3208A6F4900D6C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36BD6AA2208A6F4900D6C351 /* Assets.xcassets */; };
 		624086652095495A00DA4DA4 /* FormValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624086642095495A00DA4DA4 /* FormValueModel.swift */; };
+		6240866720954C9D00DA4DA4 /* AuthenticationServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6240866620954C9D00DA4DA4 /* AuthenticationServiceClient.swift */; };
 		62449081208C95A100CA0BBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62449080208C95A100CA0BBB /* LaunchScreen.xib */; };
 		62449084208C96AE00CA0BBB /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62449082208C96AE00CA0BBB /* ButtonTableViewCell.swift */; };
 		62449085208C96AE00CA0BBB /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */; };
@@ -45,6 +46,7 @@
 		36BD6AA2208A6F4900D6C351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36BD6AA7208A6F4900D6C351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		624086642095495A00DA4DA4 /* FormValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValueModel.swift; sourceTree = "<group>"; };
+		6240866620954C9D00DA4DA4 /* AuthenticationServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceClient.swift; sourceTree = "<group>"; };
 		62449080208C95A100CA0BBB /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		62449082208C96AE00CA0BBB /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		62449083208C96AE00CA0BBB /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				36BD6A9B208A6F4800D6C351 /* AppDelegate.swift */,
 				62A21541208D62DB00794E41 /* HomeViewController.swift */,
 				62A21542208D62DB00794E41 /* HomeView.xib */,
+				6240866620954C9D00DA4DA4 /* AuthenticationServiceClient.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				62F29756208D327500990B94 /* UIViewController.swift in Sources */,
 				62449094208C9AD300CA0BBB /* FormTableViewCell.swift in Sources */,
 				625B44E72094034900772487 /* AuthenticationCoordinator.swift in Sources */,
+				6240866720954C9D00DA4DA4 /* AuthenticationServiceClient.swift in Sources */,
 				62449089208C97B800CA0BBB /* FormTableViewDataSource.swift in Sources */,
 				625B44EB2094069E00772487 /* Coordinatable.swift in Sources */,
 				6244908B208C98E700CA0BBB /* UITableView.swift in Sources */,

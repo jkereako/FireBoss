@@ -10,9 +10,11 @@ import UIKit
 
 final class AuthenticationCoordinator: Coordinatable {
     private let navigationController: UINavigationController
+    private let authenticationServiceClient: AuthenticationServiceClient
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        authenticationServiceClient = AuthenticationServiceClient()
     }
 
     func start() {
@@ -31,7 +33,28 @@ final class AuthenticationCoordinator: Coordinatable {
 // MARK: SignInViewDelegate
 extension AuthenticationCoordinator: SignInViewDelegate {
     func didTapSignInButton(formValues: [FormValueModel]) {
-        print(#function)
+        var values = [String: String]()
+
+        formValues.forEach { values[$0.label.lowercased()] = $0.value }
+
+        authenticationServiceClient.signInWithEmail(values["email"]!, password: values["password"]!)
+        { (error) in
+            guard error == nil else {
+                let alertController = UIAlertController(
+                    title: "Sign In Failed",
+                    message: "Your email or password were incorrect. Please try again.",
+                    preferredStyle: .alert
+                )
+
+                alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+                self.navigationController.topViewController?.present(alertController, animated: true)
+
+                return
+            }
+
+            print("Sign in succeeded!")
+        }
     }
 
     func didTapCreateAccountButton() {
