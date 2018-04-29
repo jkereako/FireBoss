@@ -39,10 +39,9 @@ final class FormTableViewController: UITableViewController {
             let old = viewModel[$0]
 
             viewModel[$0] = FormTableViewModel(
-                label: old.label,
-                value: old.value,
-                error: old.error,
-                type: .button(target: self, action: #selector(submitAction(_:)))
+                type: .button(target: self, action: #selector(submitAction(_:))),
+                valueModel: old.valueModel,
+                error: old.error
             )
         }
 
@@ -71,7 +70,7 @@ extension FormTableViewController: UITextFieldDelegate {
         }
 
         let newViewModel = FormTableViewModel(
-            label: model.label, value: textField.text ?? "", error: model.error, type: model.type
+            type: model.type, valueModel: model.valueModel, error: model.error
         )
 
         dataSource?.setRowModel(newViewModel, at: indexPath)

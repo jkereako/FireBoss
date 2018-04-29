@@ -9,8 +9,17 @@
 import Foundation
 
 struct FormTableViewModel {
-    let label: String
-    let value: String
-    let error: String
     let type: TableViewCellType
+    let valueModel: FormValueModel
+    let error: String
+    var label: String { return valueModel.label }
+    var value: String { return valueModel.value }
+}
+
+extension FormTableViewModel {
+    init(type: TableViewCellType, label: String) {
+        self.type = type
+        valueModel = FormValueModel(label: label, value: "")
+        error = ""
+    }
 }

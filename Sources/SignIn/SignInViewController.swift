@@ -9,73 +9,67 @@
 import UIKit
 
 protocol SignInViewDelegate: class {
-    func didTapSignInButton(email: String, password: String)
+    func didTapSignInButton(formValues: [FormValueModel])
     func didTapCreateAccountButton()
 }
 
 final class SignInViewController: UIViewController {
     weak var delegate: SignInViewDelegate?
-
+    
     @IBOutlet private weak var formContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var formContainer: UIView!
-
+    
     private var formTableViewController: FormTableViewController!
-
+    
     init() {
         super.init(nibName: "SignInView", bundle: Bundle(for: SignInViewController.self))
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         formTableViewController = FormTableViewController()
         formTableViewController.delegate = self
-
+        
         // Hard-code the view model
         let viewModel = [
             FormTableViewModel(
-                label: "EMAIL",
-                value: "",
-                error: "",
                 type: .textField(
                     isSecureTextEntry: false,
                     keyboardType: .emailAddress,
                     returnKeyType: .next,
                     delegate: formTableViewController
-                )
+                ),
+                label: "EMAIL"
             ),
             FormTableViewModel(
-                label: "PASSWORD",
-                value: "",
-                error: "",
                 type: .textField(
                     isSecureTextEntry: true,
                     keyboardType: .default,
                     returnKeyType: .done,
                     delegate: formTableViewController
-                )
+                ),
+                label: "PASSWORD"
             ),
             FormTableViewModel(
-                label: "SIGN IN",
-                value: "",
-                error: "",
-                type: .button(target: nil, action: nil)
+                type: .button(target: nil, action: nil),
+                label: "SIGN IN"
             )
         ]
-
+        
         formTableViewController.viewModel = viewModel
         formContainerHeightConstraint.constant = formTableViewController.tableView.rowHeight * CGFloat(viewModel.count * 2)
-
+        
         addChildViewController(formTableViewController, toView: formContainer)
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-
+        
         view.endEditing(true)
     }
 }
@@ -84,8 +78,20 @@ final class SignInViewController: UIViewController {
 extension SignInViewController: FormTableViewDelegate {
     func didSubmitForm(viewModel: [FormTableViewModel]) {
         view.endEditing(true)
-
-        delegate?.didTapSignInButton(email: "email", password: "password")
+        
+        var values = [FormValueModel]()
+        
+        viewModel.forEach {
+            switch $0.type {
+            case .textField:
+                values.append(FormValueModel(label: $0.label, value: $0.value))
+            default:
+                break
+            }
+            
+        }
+        
+        delegate?.didTapSignInButton(formValues: values)
     }
 }
 
@@ -94,7 +100,7 @@ extension SignInViewController: FormTableViewDelegate {
 extension SignInViewController {
     @IBAction func createAccountAction(_ sender: UIButton) {
         view.endEditing(true)
-
+        
         delegate?.didTapCreateAccountButton()
     }
 }

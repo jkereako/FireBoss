@@ -39,32 +39,26 @@ final class CreateAccountViewController: UIViewController {
         // Hard-code the view model
         let viewModel = [
             FormTableViewModel(
-                label: "EMAIL",
-                value: "",
-                error: "",
                 type: .textField(
                     isSecureTextEntry: false,
                     keyboardType: .emailAddress,
                     returnKeyType: .next,
                     delegate: formTableViewController
-                )
+                ),
+                label: "EMAIL"
             ),
             FormTableViewModel(
-                label: "PASSWORD",
-                value: "",
-                error: "",
                 type: .textField(
                     isSecureTextEntry: true,
                     keyboardType: .default,
                     returnKeyType: .done,
                     delegate: formTableViewController
-                )
+                ),
+                label: "PASSWORD"
             ),
             FormTableViewModel(
-                label: "CREATE ACCOUNT",
-                value: "",
-                error: "",
-                type: .button(target: nil, action: nil)
+                type: .button(target: nil, action: nil),
+                label: "CREATE ACCOUNT"
             )
         ]
 

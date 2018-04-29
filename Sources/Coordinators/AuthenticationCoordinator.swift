@@ -30,7 +30,7 @@ final class AuthenticationCoordinator: Coordinatable {
 
 // MARK: SignInViewDelegate
 extension AuthenticationCoordinator: SignInViewDelegate {
-    func didTapSignInButton(email: String, password: String) {
+    func didTapSignInButton(formValues: [FormValueModel]) {
         print(#function)
     }
 
