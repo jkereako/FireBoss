@@ -9,7 +9,8 @@
 import UIKit
 
 protocol CreateAccountViewDelegate: class {
-    func didTapCreateAccountButton(email: String, password: String)
+    func didTapCreateAccountButton(from viewController: UIViewController,
+                                   with formValues: [FormValueModel])
 }
 
 final class CreateAccountViewController: UIViewController {
@@ -80,7 +81,21 @@ extension CreateAccountViewController: FormTableViewDelegate {
     func didSubmitForm(viewModel: [FormTableViewModel]) {
         view.endEditing(true)
 
-        delegate?.didTapCreateAccountButton(email: "email", password: "password")
+        guard let aDelegate = delegate else { return }
+
+        var values = [FormValueModel]()
+
+        viewModel.forEach {
+            switch $0.type {
+            case .textField:
+                values.append(FormValueModel(label: $0.label, value: $0.value))
+            default:
+                break
+            }
+
+        }
+
+        aDelegate.didTapCreateAccountButton(from: self, with: values)
     }
 }
 

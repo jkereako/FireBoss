@@ -32,32 +32,28 @@ final class AuthenticationCoordinator: Coordinatable {
 
 // MARK: SignInViewDelegate
 extension AuthenticationCoordinator: SignInViewDelegate {
-    func didTapSignInButton(formValues: [FormValueModel]) {
+    func didTapSignInButton(from viewController: UIViewController, with formValues: [FormValueModel]) {
         var values = [String: String]()
 
         formValues.forEach { values[$0.label.lowercased()] = $0.value }
 
         authenticationServiceClient.signInWithEmail(values["email"]!, password: values["password"]!)
         { (error) in
-            guard error == nil else {
-                let alertController = UIAlertController(
-                    title: "Sign In Failed",
-                    message: "Your email or password were incorrect. Please try again.",
-                    preferredStyle: .alert
-                )
-
-                alertController.addAction(UIAlertAction(title: "OK", style: .default))
-
-                self.navigationController.topViewController?.present(alertController, animated: true)
+            guard let err = error else {
+                print("Sign in succeeded!")
 
                 return
             }
 
-            print("Sign in succeeded!")
+            let title = "Sign In Failed"
+            let message = err.localizedDescription
+            let alertController = self.alertControllerWithTitle(title, message: message)
+
+            viewController.present(alertController, animated: true)
         }
     }
 
-    func didTapCreateAccountButton() {
+    func didTapCreateAccountButton(from viewController: UIViewController) {
         let viewController = CreateAccountViewController()
         viewController.delegate = self
 
@@ -69,7 +65,38 @@ extension AuthenticationCoordinator: SignInViewDelegate {
 
 // MARK: - CreateAccountViewDelegate
 extension AuthenticationCoordinator: CreateAccountViewDelegate {
-    func didTapCreateAccountButton(email: String, password: String) {
-        print(#function)
+    func didTapCreateAccountButton(from viewController: UIViewController,
+                                   with formValues: [FormValueModel]) {
+        var values = [String: String]()
+
+        formValues.forEach { values[$0.label.lowercased()] = $0.value }
+
+        authenticationServiceClient.signInWithEmail(values["email"]!, password: values["password"]!)
+        { (error) in
+            var title = "You're Registered!"
+            var message = "Your account was created successfully!"
+
+            if let err = error {
+                title = "Something's Wrong"
+                message = err.localizedDescription
+            }
+
+            let alertController = self.alertControllerWithTitle(title, message: message)
+
+            viewController.present(alertController, animated: true)
+        }
+    }
+}
+
+// MARK: - Private helper methods
+private extension AuthenticationCoordinator {
+    func alertControllerWithTitle(_ title: String, message: String) -> UIAlertController {
+        let alertController = UIAlertController(
+            title: title, message: message, preferredStyle: .alert
+        )
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+        return alertController
     }
 }

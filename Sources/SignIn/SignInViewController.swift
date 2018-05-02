@@ -9,8 +9,8 @@
 import UIKit
 
 protocol SignInViewDelegate: class {
-    func didTapSignInButton(formValues: [FormValueModel])
-    func didTapCreateAccountButton()
+    func didTapSignInButton(from viewController: UIViewController, with formValues: [FormValueModel])
+    func didTapCreateAccountButton(from viewController: UIViewController)
 }
 
 final class SignInViewController: UIViewController {
@@ -79,6 +79,8 @@ extension SignInViewController: FormTableViewDelegate {
     func didSubmitForm(viewModel: [FormTableViewModel]) {
         view.endEditing(true)
 
+        guard let aDelegate = delegate else { return }
+
         var values = [FormValueModel]()
 
         viewModel.forEach {
@@ -90,8 +92,8 @@ extension SignInViewController: FormTableViewDelegate {
             }
 
         }
-
-        delegate?.didTapSignInButton(formValues: values)
+        
+        aDelegate.didTapSignInButton(from: self, with: values)
     }
 }
 
@@ -101,6 +103,6 @@ extension SignInViewController {
     @IBAction func createAccountAction(_ sender: UIButton) {
         view.endEditing(true)
 
-        delegate?.didTapCreateAccountButton()
+        delegate?.didTapCreateAccountButton(from: self)
     }
 }
